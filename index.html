@@ -731,7 +731,7 @@
     var currentHymnIndex = 0;
     var soloActive = false;
     var btDelayMs = 0;
-    var globalTranspose = 3; // Sax Alto afina em Eb (+3 semitons)
+    var globalTranspose = -9; // Sax Alto afina em Eb (-9 semitons)
 
     /* ─── Dedilhado do Saxofone Alto ─── */
     // Mapeia MIDI (nota escrita do sax alto) para IDs das chaves
@@ -1552,7 +1552,7 @@
         document.getElementById('fname').textContent = "Carregando " + name + "...";
         await loadFromUrl(url, name);
         var kSel = document.getElementById('keySelect');
-        if (kSel) { kSel.value = "3"; globalTranspose = 3; try { localStorage.setItem('saxKeyTranspose', globalTranspose); } catch(_) {} }
+        if (kSel) { kSel.value = "-9"; globalTranspose = -9; try { localStorage.setItem('saxKeyTranspose', globalTranspose); } catch(_) {} }
         this.value = "";
         var fSelChg = document.getElementById('hymnSelectFocus');
         if (fSelChg) fSelChg.value = "";
