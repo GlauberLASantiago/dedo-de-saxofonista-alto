@@ -1525,7 +1525,7 @@
     async function loadHymnList() {
         var select = document.getElementById('hymnSelect');
         try {
-            var githubApiUrl = 'https://api.github.com/repos/GlauberLASantiago/dedo-de-trompetista/contents/Instrumentos-Bb';
+            var githubApiUrl = 'https://api.github.com/repos/GlauberLASantiago/dedo-de-saxofonista-alto/contents/Sax-alto';
             var response = await fetch(githubApiUrl);
             if (!response.ok) throw new Error('Erro ' + response.status);
             var data = await response.json();
