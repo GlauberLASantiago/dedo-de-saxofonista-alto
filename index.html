@@ -1550,7 +1550,7 @@
         currentHymnIndex = this.selectedIndex;
         var url = this.value, name = this.options[this.selectedIndex].text;
         document.getElementById('fname').textContent = "Carregando " + name + "...";
-        await loadFromUrl(url, name);
+        await loadFromUrl('https://github.com/GlauberLASantiago/dedo-de-saxofonista-alto/blob/main/Sax-alto/001_1%C2%AAM_ad_SaxAlto.xml');
         var kSel = document.getElementById('keySelect');
         if (kSel) { kSel.value = "-9"; globalTranspose = -9; try { localStorage.setItem('saxKeyTranspose', globalTranspose); } catch(_) {} }
         this.value = "";
