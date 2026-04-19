@@ -8,27 +8,13 @@ const SHELL_ASSETS = [
   './icons/icon-512.png'
 ];
 
-const CDN_ASSETS = [
-  'https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.7/build/opensheetmusicdisplay.min.js',
-  'https://cdn.jsdelivr.net/npm/soundfont-player@0.12.0/dist/soundfont-player.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
-  'https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js',
-  'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap'
-];
-
-// Install: cache shell + CDN assets
+// Install: cache only same-origin shell assets.
+// CDN and score assets are cached on first access via the fetch handler.
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache =>
-      Promise.allSettled([
-        cache.addAll(SHELL_ASSETS),
-        ...CDN_ASSETS.map(url =>
-          fetch(url, { mode: 'no-cors' })
-            .then(res => cache.put(url, res))
-            .catch(() => {})
-        )
-      ])
-    ).then(() => self.skipWaiting())
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(SHELL_ASSETS))
+      .then(() => self.skipWaiting())
   );
 });
 
