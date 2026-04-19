@@ -1542,6 +1542,11 @@
             var fSelLoad = document.getElementById('hymnSelectFocus');
             if (fSelLoad) { fSelLoad.innerHTML = ''; for (var ki = 0; ki < select.options.length; ki++) fSelLoad.appendChild(select.options[ki].cloneNode(true)); }
             if (hinosEncontrados === 0) select.options[0].textContent = "⚠️ Nenhum arquivo";
+            else if (!EMBEDDED_XML && select.options.length > 1) {
+                currentHymnIndex = 1;
+                var firstOpt = select.options[1];
+                await loadFromUrl(firstOpt.value, firstOpt.textContent);
+            }
         } catch(e) { console.warn('Erro ao carregar lista:', e); }
     }
 
