@@ -1,6 +1,9 @@
 # 🎷 Dedo de Saxofonista Alto
 
-Aplicativo web progressivo (PWA) para visualização e reprodução de partituras musicais para **Saxofone Alto**. Exibe o diagrama de dedilhado do saxofone em tempo real enquanto a partitura é tocada, permitindo o estudo e a prática do instrumento diretamente no navegador.
+Aplicativo web para visualização e reprodução de partituras musicais para **Saxofone Alto**. Exibe o diagrama de dedilhado do saxofone em tempo real enquanto a partitura é tocada, permitindo o estudo e a prática do instrumento diretamente no navegador.
+
+<img width="1514" height="907" alt="image" src="https://github.com/user-attachments/assets/9f2575ea-6750-453a-9c81-bd09c4030e2d" />
+
 
 ## Funcionalidades
 
